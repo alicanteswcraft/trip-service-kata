@@ -8,7 +8,7 @@ class TripService
 
     def get_trip_by_user(user)
         trip_list = []
-        logged_user = UserSession.get_instance.get_logged_user
+        logged_user = get_logged_user
         is_friend = false
 
         if(!logged_user.nil?)
@@ -28,6 +28,12 @@ class TripService
             raise UserNotLoggedInException.new
         end
 
+    end
+
+    private
+
+    def get_logged_user
+        UserSession.get_instance.get_logged_user
     end
 
 end

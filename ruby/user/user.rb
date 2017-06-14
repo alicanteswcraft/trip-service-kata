@@ -1,6 +1,9 @@
 class User
-    @trips = []
-    @friends = []
+
+    def initialize
+        @trips = []
+        @friends = []
+    end
 
     def get_friends
         @friends
